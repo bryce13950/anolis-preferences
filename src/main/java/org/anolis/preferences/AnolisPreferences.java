@@ -3,7 +3,6 @@ package org.anolis.preferences;
 
 import java.util.Map;
 
-import org.axolotlinteractive.android.phillipphramework.PhrameworkApplication;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,8 +14,8 @@ public class AnolisPreferences{
 
 	private SharedPreferences prefs;
 	
-	public PhrameworkPreferences(PhrameworkApplication ma){
-		prefs=ma.getSharedPreferences(ma.getPreferencesName(), Context.MODE_PRIVATE);
+	public AnolisPreferences(Context ctx, String prefernecesName){
+		prefs=ctx.getSharedPreferences(prefernecesName, Context.MODE_PRIVATE);
 	}
 	
 	public void put(String key, Object obj){
