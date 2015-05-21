@@ -2,6 +2,7 @@ package org.anolis.preferences;
 
 
 import java.util.Map;
+import java.util.Set;
 
 
 import android.content.Context;
@@ -10,12 +11,12 @@ import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
 
-public class AnolisPreferences{
+public class AnolisPreferences {
 
 	private SharedPreferences prefs;
 	
-	public AnolisPreferences(Context ctx, String prefernecesName){
-		prefs=ctx.getSharedPreferences(prefernecesName, Context.MODE_PRIVATE);
+	public AnolisPreferences(Context ctx, String preferencesName){
+		prefs=ctx.getSharedPreferences(preferencesName, Context.MODE_PRIVATE);
 	}
 	
 	public void put(String key, Object obj){
@@ -77,6 +78,8 @@ public class AnolisPreferences{
 	public String getString(String key, String defValue) {
 		return prefs.getString(key, defValue);
 	}
+
+
 	public void deletePref(String pref){
 		deletePrefs(new String[]{pref});
 	}
@@ -96,17 +99,5 @@ public class AnolisPreferences{
 		SharedPreferences.Editor edit = prefs.edit();
 		edit.clear();
 		edit.commit();
-	}
-
-	public void registerOnSharedPreferenceChangeListener(
-			OnSharedPreferenceChangeListener listener) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void unregisterOnSharedPreferenceChangeListener(
-			OnSharedPreferenceChangeListener listener) {
-		// TODO Auto-generated method stub
-		
 	}
 }
