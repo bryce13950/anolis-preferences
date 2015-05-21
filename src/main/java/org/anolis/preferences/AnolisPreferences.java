@@ -2,13 +2,11 @@ package org.anolis.preferences;
 
 
 import java.util.Map;
-import java.util.Set;
 
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
 
 public class AnolisPreferences {
