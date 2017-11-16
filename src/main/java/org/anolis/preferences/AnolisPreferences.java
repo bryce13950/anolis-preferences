@@ -26,6 +26,9 @@ public class AnolisPreferences {
 			throw new RuntimeException("Your must pass the same amount of keys and objects");
 		SharedPreferences.Editor edit=edit();
 		for(int i=0;i<keys.length;i++){
+			if (objs[i] == null) {
+				edit.remove(keys[i]);
+			}
 			if(objs[i] instanceof String){
 				edit.putString(keys[i], (String)objs[i]);
 			}
